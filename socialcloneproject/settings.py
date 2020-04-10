@@ -32,6 +32,8 @@ ALLOWED_HOSTS = []
 
 INSTALLED_APPS = [
     'accounts.apps.AccountsConfig',
+    'posts.apps.PostsConfig',
+    'groups.apps.GroupsConfig',
     'bootstrap3',
     'django.contrib.admin',
     'django.contrib.auth',
