@@ -1,3 +1,8 @@
 from django.contrib import admin
+from groups.models import Group, GroupMember
 
-# Register your models here.
+admin.site.register(Group)
+
+
+class GroupMemeberInline(admin.TabularInline):
+    model = GroupMember

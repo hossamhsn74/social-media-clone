@@ -6,16 +6,13 @@
     
     <div class="container">
         <h1> welcome, please Login !</h1>
-
-            <form action="#" method="post" class="form">
-                {% csrf_token %}
-                {% bootstrap_form form %}
-                {% buttons %}
-                    <button type="submit" class="btn btn-warning">
-                        {% bootstrap_icon "star" %} Login
-                    </button>
-                {% endbuttons %}
-            </form>
+        <form action="#" method="post" class="form">
+            {% csrf_token %}
+            {% bootstrap_form form %}
+            {% buttons %}
+                <button type="submit" class="btn btn-warning">Login</button>
+            {% endbuttons %}
+        </form>
 
     </div>
     
