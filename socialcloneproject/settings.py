@@ -35,6 +35,7 @@ INSTALLED_APPS = [
     'posts.apps.PostsConfig',
     'groups.apps.GroupsConfig',
     'bootstrap3',
+    'django_misaka',
     'django.contrib.admin',
     'django.contrib.auth',
     'django.contrib.contenttypes',
