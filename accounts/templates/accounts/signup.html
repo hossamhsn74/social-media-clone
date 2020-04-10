@@ -1,0 +1,16 @@
+{% extends 'base.html' %}
+{% block title %}  SignUp{% endblock title %}
+
+{% block content %}
+    
+    <div class="container">
+        <h1> welcome, please signup !</h1>
+
+        <form action="" method="post">
+            {% csrf_token %}
+         
+            <input type="submit" class="btn btn-lg-alert" value="SignUp">
+        </form>
+    </div>
+    
+{% endblock content %}
