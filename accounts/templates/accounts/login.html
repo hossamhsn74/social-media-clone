@@ -1,4 +1,5 @@
 {% extends 'base.html' %}
+{% load bootstrap3 %}
 {% block title %}  Login {% endblock title %}
 
 {% block content %}
@@ -6,11 +7,16 @@
     <div class="container">
         <h1> welcome, please Login !</h1>
 
-        <form action="" method="post">
-            {% csrf_token %}
+            <form action="#" method="post" class="form">
+                {% csrf_token %}
+                {% bootstrap_form form %}
+                {% buttons %}
+                    <button type="submit" class="btn btn-warning">
+                        {% bootstrap_icon "star" %} Login
+                    </button>
+                {% endbuttons %}
+            </form>
 
-            <input type="submit" class="btn btn-lg-alert" value="Login">
-        </form>
     </div>
     
 {% endblock content %}

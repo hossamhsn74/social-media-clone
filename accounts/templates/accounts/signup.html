@@ -1,4 +1,5 @@
 {% extends 'base.html' %}
+{% load bootstrap3 %}
 {% block title %}  SignUp{% endblock title %}
 
 {% block content %}
@@ -6,10 +7,12 @@
     <div class="container">
         <h1> welcome, please signup !</h1>
 
-        <form action="" method="post">
-            {% csrf_token %}
-         
-            <input type="submit" class="btn btn-lg-alert" value="SignUp">
+       <form action="#" method="post" class="form">
+                {% csrf_token %}
+                {% bootstrap_form form %}
+                {% buttons %}
+                    <button type="submit" class="btn btn-warning">Sign Up</button>
+                {% endbuttons %}
         </form>
     </div>
     
