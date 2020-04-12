@@ -1,2 +1,4 @@
+django
 django-bootstrap3
 django-misaka
+pillow

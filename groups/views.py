@@ -5,7 +5,7 @@ from django.views.generic import CreateView, ListView, DetailView, RedirectView
 from groups.models import Group, GroupMember
 from django.contrib import messages
 from django.shortcuts import get_object_or_404
-from django import IntegrityError
+from django.db import IntegrityError
 
 
 class GroupCreateView(CreateView):
@@ -46,7 +46,7 @@ class leaveGroup(LoginRequiredMixin, RedirectView):
 
     def get(self, request, *args, **kwargs):
         try:
-            membership = models.GroupMember.objects.filter(
+            membership = GroupMember.objects.filter(
                 user=self.request.user, group__slug=self.kwargs.get('slug')).get()
         except models.GroupMember.DoesNotExist:
             messages.warning(
