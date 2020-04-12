@@ -11,17 +11,17 @@ from django.db import IntegrityError
 class GroupCreateView(CreateView):
     model = Group
     fields = ('name', 'descreption')
-    template_name = "group_form.html"
+    template_name = "groups/group_form.html"
 
 
 class GroupListView(ListView):
     model = Group
-    template_name = "group_list.html"
+    template_name = "groups/group_list.html"
 
 
 class GroupDetailView(DetailView):
     model = Group
-    template_name = "group_detail.html"
+    template_name = "groups/group_detail.html"
 
 
 class joinGroup(LoginRequiredMixin, RedirectView):
@@ -32,7 +32,7 @@ class joinGroup(LoginRequiredMixin, RedirectView):
         group = get_object_or_404(Group, slug=self.kwargs.get('slug'))
 
         try:
-            GroupMember.object.create(user=self.request.user, group=group)
+            GroupMember.objects.create(user=self.request.user, group=group)
         except IntegrityError:
             messages.warning(self.request, 'Warning!, already a memeber!')
         else:

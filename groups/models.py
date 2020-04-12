@@ -16,7 +16,7 @@ class Group(models.Model):
     slug = models.SlugField(allow_unicode=True, unique=True)
     descreption = models.TextField(blank=True, default='')
     descreption_html = models.TextField(editable=False, default='', blank=True)
-    members = models.ManyToManyField("User", through='GroupMember')
+    members = models.ManyToManyField("accounts.User", through='GroupMember')
 
     def __str__(self):
         return self.name
@@ -35,9 +35,9 @@ class Group(models.Model):
 
 class GroupMember(models.Model):
     group = models.ForeignKey(
-        "Group", related_name="membership", on_delete=models.CASCADE)
+        "groups.Group", related_name="membership", on_delete=models.CASCADE)
     user = models.ForeignKey(
-        "User", related_name="user_groups", on_delete=models.CASCADE)
+        "accounts.User", related_name="user_groups", on_delete=models.CASCADE)
 
     def __str__(self):
         return self.user.username
